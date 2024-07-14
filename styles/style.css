@@ -42,7 +42,161 @@ a {
     transition: 1s;
 } 
 */
-.logo__img {
-    width: 30%;
-    float: right;
+*{
+    margin: 0;
+    padding: 0;
 }
+
+.logo__img{
+    height: 2rem;
+    
+}
+.index__main__cover0 {
+    position: relative;
+    max-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-image: url(../media/almendra0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+}
+.index__main__cover0::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.index__main__cover0 h2{
+    z-index: 2;
+    color: white;
+
+}
+.index__main__cover1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-image: url(../media/almendraII.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+}
+.index__main__cover1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.index__main__cover1 h2{
+    z-index: 2;
+    color: white;
+
+}
+footer {
+    background-color: #1a1d1a;
+    color: white;
+}
+/* pescado */
+
+.pescado__main__cover0 {
+    position: relative;
+    max-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-image: url(../media/pescado-cover0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+}
+.pescado__main__cover0::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.pescado__main__cover0 h2{
+    z-index: 2;
+    color: white;
+
+}
+.pescado__main__cover1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-image: url(../media/pescado-cover1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+}
+/*
+.pescado__main__cover1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+    */
+.pescado__main__cover1 h2{
+    z-index: 2;
+    color: white;
+
+}
+.artaud-bg {
+    background-color: #47F712;
+}
+
+.artaud-bg::before {
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.pescado-bg {
+    background-color: #a04038;
+}
+
+.pescado-bg::before {
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
