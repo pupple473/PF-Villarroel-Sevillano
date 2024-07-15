@@ -45,6 +45,7 @@ a {
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 p {
     text-align: justify;
@@ -206,6 +207,14 @@ footer {
     background-color: #a04038;
     border-color: #86362f;
 }
+.pescado__card-bg-1{
+    background-color: #2F4655;
+}
+.card-header {
+    background-color: #86362f;
+    color: white;
+    border-width: 0px;
+}
 .pescado-bg {
     background-color: #a04038;
 }
@@ -275,74 +284,24 @@ footer {
 
 /* Galeria */
 
-.item-cuadrado{
-    width: 200px;
-    height: 200px;
-}
-.item-vertical{
-    width: 200px;
-    height: 400px;
-}
-.item-horizontal{
-    width: 400px;
-    height: 200px;
-}
-.item-cuadrado img{
+.card {
     position: relative;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+    border: none;
+    background-color: transparent;
 }
-.item-vertical img{
-    position: relative;
-    width: 100%;
+.card img {
+    padding: 1.7rem;
+    border-radius: 15%;
 }
-.item-horizontal img{
-    position: relative;
-    height: 100%;
+.gallery-bg {
+    background-color: #fff;
 }
-/*
-#spinettalandia0 {
-    grid-area: img0;
-}
-#spinettalandia1 {
-    grid-area: img1;
-}
-#spinettalandia2 {
-    grid-area: img2;
-}
-#spinettalandia3 {
-    grid-area: img3;
-}
-#spinettalandia4 {
-    grid-area: img4;
-}
-#spinettalandia5 {
-    grid-area: img5;
-}
-#spinettalandia6 {
-    grid-area: img6;
-}
-#spinettalandia7 {
-    grid-area: img7;
-}
-#spinettalandia8 {
-    grid-area: img8;
-}
-#spinettalandia9 {
-    grid-area: img9;
-}
-*/
-.gallery {
-    display: grid;
-    grid-template-rows: repeat();
-}
-.gallery-img {
-    transition: transform 1s;
-    overflow: hidden;
 
-}
-.gallery-img img {
-    transition: transform 1s;
-}
+
+
 /* contacto */
 .contacto__body {
     background-color: #333;
@@ -363,6 +322,7 @@ input{
     border: none;
     background-color: #F8F9FA;
     width: 100%;
+    height: 2rem;
 }
 textarea {
     border: none;
@@ -381,10 +341,13 @@ textarea {
     background-color: #f8f9fa;
     border-radius: 0%;
 }
-.contacto__footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+
+@media (min-width: 768px) { /* md */
+    .contacto__footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 }
 
 @media (min-width: 833px) { /* lg, xl, xxl */
@@ -394,5 +357,14 @@ textarea {
     #containerContacto {
         display: flex;
     }
-
+    .card img:hover {
+        transform: scale(1.1);
+        transition: 0.5s;
+    
+    }
+    .contacto__footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 }
