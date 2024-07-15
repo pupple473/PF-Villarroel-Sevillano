@@ -46,7 +46,17 @@ a {
     margin: 0;
     padding: 0;
 }
-
+p {
+    text-align: justify;
+}
+.p__justify {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+html, body {
+    height: 100%;
+}
 .logo__img{
     height: 2rem;
     
@@ -106,10 +116,19 @@ a {
     color: white;
 
 }
+.index__almendrai {
+    background-color: #946C78;
+}
+.index__almendraii {
+    background-color: #5C822C;
+}
 footer {
     background-color: #1a1d1a;
     color: white;
+    padding: 10px;
+
 }
+
 /* pescado */
 
 .pescado__main__cover0 {
@@ -183,14 +202,31 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-
+.pescado__card-bg{
+    background-color: #a04038;
+    border-color: #86362f;
+}
 .pescado-bg {
     background-color: #a04038;
 }
 
-.pescado-bg::before {
-    content: "";
+/* invisible */
+.invisible__main__cover0 {
     position: relative;
+    max-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-image: url(../media/durazno-cover.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+}
+.invisible__main__cover0::before {
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -198,5 +234,165 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+.invisible__main__cover0 h2{
+    z-index: 2;
+    color: white;
 
+}
+.invisible__main__cover1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-image: url(../media/jardin-cover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+}
+.invisible__main__cover1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.invisible__main__cover1 h2{
+    z-index: 2;
+    color: white;
 
+}
+.jardin-bg {
+    background-color: #493838;
+}
+.durazno-bg {
+    background-color: #b2620c;
+}
+
+/* Galeria */
+
+.item-cuadrado{
+    width: 200px;
+    height: 200px;
+}
+.item-vertical{
+    width: 200px;
+    height: 400px;
+}
+.item-horizontal{
+    width: 400px;
+    height: 200px;
+}
+.item-cuadrado img{
+    position: relative;
+    width: 100%;
+}
+.item-vertical img{
+    position: relative;
+    width: 100%;
+}
+.item-horizontal img{
+    position: relative;
+    height: 100%;
+}
+/*
+#spinettalandia0 {
+    grid-area: img0;
+}
+#spinettalandia1 {
+    grid-area: img1;
+}
+#spinettalandia2 {
+    grid-area: img2;
+}
+#spinettalandia3 {
+    grid-area: img3;
+}
+#spinettalandia4 {
+    grid-area: img4;
+}
+#spinettalandia5 {
+    grid-area: img5;
+}
+#spinettalandia6 {
+    grid-area: img6;
+}
+#spinettalandia7 {
+    grid-area: img7;
+}
+#spinettalandia8 {
+    grid-area: img8;
+}
+#spinettalandia9 {
+    grid-area: img9;
+}
+*/
+.gallery {
+    display: grid;
+    grid-template-rows: repeat();
+}
+.gallery-img {
+    transition: transform 1s;
+    overflow: hidden;
+
+}
+.gallery-img img {
+    transition: transform 1s;
+}
+/* contacto */
+.contacto__body {
+    background-color: #333;
+}
+.formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formularioo {
+    width: 50%;
+}
+label, input, textarea {
+    font-size: 1rem;
+
+}
+input{
+    border: none;
+    background-color: #F8F9FA;
+    width: 100%;
+}
+textarea {
+    border: none;
+    background-color: #F8F9FA;
+    padding: 1rem;
+    width: 100%;
+}
+#enviar:hover{
+    background-color: #333;
+    color: #F8F9FA;
+}
+.contacto__text{
+    color: #F8F9FA;
+}
+.contacto__btn{
+    background-color: #f8f9fa;
+    border-radius: 0%;
+}
+.contacto__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (min-width: 833px) { /* lg, xl, xxl */
+    .gallery-img:hover {
+      transform: scale(1.1);
+    }
+    #containerContacto {
+        display: flex;
+    }
+
+}
