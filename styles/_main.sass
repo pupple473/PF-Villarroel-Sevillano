@@ -1,0 +1,96 @@
+@import 'variables'
+
+
+$content0: $bg0
+$content1: $bg1
+$content2: $bg2
+$content3: $bg3
+$content4: $bg4
+$content5: $bg5
+
+p, h1, h2, h3, h4, a
+    color: $bgg0
+    text-align: justify
+h4
+    display: flex
+    align-items: center
+    justify-content: center
+.p__justify
+    display: flex
+    align-items: center
+    justify-content: center
+main
+    .cover0
+        position: relative
+        max-height: 60vh
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-grow: 1
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        height: 40vh
+        h2
+            z-index: 2
+    .cover0::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.5)
+        z-index: 1
+    .cover1
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-grow: 1
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        height: 40vh
+        h2
+            z-index: 2
+            color: $bgg0
+    .cover1:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.5)
+        z-index: 1 
+    #cover0
+        background-image: url(../media/almendra/almendraI.jpg)
+    #cover1
+        background-image: url(../media/almendra/almendraII.jpg)
+    #cover2
+        background-image: url(../media/pescado/pescado2-cover.jpg)
+    #cover3
+        background-image: url(../media/pescado/artaud-cover.jpeg)
+    #cover4
+        background-image: url(../media/invisible/durazno-cover.jpeg)
+    #cover5
+        background-image: url(../media/invisible/jardin-cover.jpg)
+    .content0
+        background-color: $bg0
+    .content1
+        background-color: $bg1
+    .content2
+        background-color: $bg2
+    .content3
+        background-color: $bg3
+    .content4
+        background-color: $bg4
+    .content5
+        background-color: $bg5
+@import 'components'
+
+
+
+
+

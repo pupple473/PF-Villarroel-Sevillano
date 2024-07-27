@@ -1,11 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+p, h1, h2, h3, h4, a {
+  color: #fff;
+  text-align: justify;
 }
 
-p {
-  text-align: justify;
+h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .p__justify {
@@ -14,330 +15,268 @@ p {
   justify-content: center;
 }
 
-html, body {
-  height: 100%;
-}
-
-.logo__img {
-  height: 2rem;
-}
-
-.index__main__cover0 {
+main .cover0 {
   position: relative;
   max-height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40vh;
+}
+main .cover0 h2 {
+  z-index: 2;
+}
+main .cover0::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+main .cover1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40vh;
+}
+main .cover1 h2 {
+  z-index: 2;
+  color: #fff;
+}
+main .cover1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+main #cover0 {
   background-image: url(../media/almendra/almendraI.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 40vh;
 }
-
-.index__main__cover0::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.index__main__cover0 h2 {
-  z-index: 2;
-  color: white;
-}
-
-.index__main__cover1 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+main #cover1 {
   background-image: url(../media/almendra/almendraII.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 40vh;
 }
-
-.index__main__cover1::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.index__main__cover1 h2 {
-  z-index: 2;
-  color: white;
-}
-
-.index__almendrai {
-  background-color: #946C78;
-}
-
-.index__almendraii {
-  background-color: #5C822C;
-}
-
-footer {
-  background-color: #1a1d1a;
-  color: white;
-  padding: 10px;
-}
-
-/* pescado */
-.pescado__main__cover0 {
-  position: relative;
-  max-height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+main #cover2 {
   background-image: url(../media/pescado/pescado2-cover.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 40vh;
 }
-
-.pescado__main__cover0::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.pescado__main__cover0 h2 {
-  z-index: 2;
-  color: white;
-}
-
-.pescado__main__cover1 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+main #cover3 {
   background-image: url(../media/pescado/artaud-cover.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 40vh;
 }
-
-.pescado__main__cover1::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.pescado__main__cover1 h2 {
-  z-index: 2;
-  color: white;
-}
-
-.artaud-bg {
-  background-color: #178A08;
-}
-
-.artaud-bg::before {
-  content: "";
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.pescado__card-bg {
-  background-color: #a04038;
-  border-color: #86362f;
-}
-
-.pescado__card-bg-1 {
-  background-color: #2F4655;
-}
-
-.card-header {
-  background-color: #86362f;
-  color: white;
-  border-width: 0px;
-}
-
-.pescado-bg {
-  background-color: #a04038;
-}
-
-/* invisible */
-.invisible__main__cover0 {
-  position: relative;
-  max-height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+main #cover4 {
   background-image: url(../media/invisible/durazno-cover.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 40vh;
 }
-
-.invisible__main__cover0::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.invisible__main__cover0 h2 {
-  z-index: 2;
-  color: white;
-}
-
-.invisible__main__cover1 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+main #cover5 {
   background-image: url(../media/invisible/jardin-cover.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 40vh;
 }
-
-.invisible__main__cover1::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+main .content0 {
+  background-color: #946c78;
 }
-
-.invisible__main__cover1 h2 {
-  z-index: 2;
-  color: white;
+main .content1 {
+  background-color: #5c822c;
 }
-
-.jardin-bg {
+main .content2 {
+  background-color: #a04038;
+}
+main .content3 {
+  background-color: #178a08;
+}
+main .content4 {
   background-color: #493838;
 }
-
-.durazno-bg {
+main .content5 {
   background-color: #b2620c;
 }
 
-/* Galeria */
-.card {
+.content2 .pescado__card-bg {
+  background-color: #a04038;
+  border-color: #86362f;
+}
+.content2 ul .list__bg0 {
+  background-color: #a04038 !important;
+}
+.content2 ul .list__bg1 {
+  background-color: #2f4655 !important;
+}
+.content2 ul .gallery-bg {
+  background-color: #fff !important;
+}
+.content2 .card {
   position: relative;
   display: flex;
   flex-direction: column;
+  max-height: -moz-fit-content;
   max-height: fit-content;
   border: none;
   background-color: transparent;
 }
-
-.card img {
+.content2 .card img {
   padding: 1.7rem;
   border-radius: 15%;
 }
 
-.gallery-bg {
-  background-color: #fff;
+.contacto__main {
+  background-color: #333 !important;
 }
-
-/* contacto */
-.contacto__body {
+.contacto__main h1, .contacto__main p, .contacto__main label {
+  color: #f8f9fa;
   background-color: #333;
 }
-
-.formulario {
+.contacto__main .formulario {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.formularioo {
+.contacto__main .formulario form {
   width: 50%;
 }
-
-label, input, textarea {
+.contacto__main .formulario form label, .contacto__main .formulario form input, .contacto__main .formulario form textarea {
   font-size: 1rem;
 }
-
-input {
+.contacto__main .formulario form input, .contacto__main .formulario form textarea, .contacto__main .formulario form button {
+  background-color: #f8f9fa;
+}
+.contacto__main .formulario form input {
   border: none;
-  background-color: #F8F9FA;
   width: 100%;
   height: 2rem;
 }
-
-textarea {
+.contacto__main .formulario form textarea {
   border: none;
-  background-color: #F8F9FA;
   padding: 1rem;
   width: 100%;
 }
-
-#enviar:hover {
-  background-color: #333;
-  color: #F8F9FA;
-}
-
-.contacto__text {
-  color: #F8F9FA;
-}
-
-.contacto__btn {
-  background-color: #f8f9fa;
+.contacto__main .formulario form button {
   border-radius: 0%;
 }
-
-@media (min-width: 768px) { /* md */
-  .contacto__footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
+.contacto__main .formulario form button:hover {
+  background-color: #333;
+  color: #f8f9fa;
 }
-@media (min-width: 833px) { /* lg, xl, xxl */
-  .gallery-img:hover {
-    transform: scale(1.1);
-  }
-  #containerContacto {
-    display: flex;
-  }
-  .card img:hover {
+
+.gallery-bg h1, .gallery-bg h2, .gallery-bg h3, .gallery-bg p {
+  color: #333;
+}
+.gallery-bg .card {
+  border-radius: 15%;
+  border-color: transparent;
+}
+.gallery-bg .card img {
+  border-radius: 15%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+nav img {
+  height: 2rem;
+}
+
+footer {
+  background-color: #1a1d1a;
+  color: #fff;
+  padding: 10px;
+}
+
+.content2 .pescado__card-bg {
+  background-color: #a04038;
+  border-color: #86362f;
+}
+.content2 ul .list__bg0 {
+  background-color: #a04038 !important;
+}
+.content2 ul .list__bg1 {
+  background-color: #2f4655 !important;
+}
+.content2 ul .gallery-bg {
+  background-color: #fff !important;
+}
+.content2 .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  border: none;
+  background-color: transparent;
+}
+.content2 .card img {
+  padding: 1.7rem;
+  border-radius: 15%;
+}
+
+.contacto__main {
+  background-color: #333 !important;
+}
+.contacto__main h1, .contacto__main p, .contacto__main label {
+  color: #f8f9fa;
+  background-color: #333;
+}
+.contacto__main .formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contacto__main .formulario form {
+  width: 50%;
+}
+.contacto__main .formulario form label, .contacto__main .formulario form input, .contacto__main .formulario form textarea {
+  font-size: 1rem;
+}
+.contacto__main .formulario form input, .contacto__main .formulario form textarea, .contacto__main .formulario form button {
+  background-color: #f8f9fa;
+}
+.contacto__main .formulario form input {
+  border: none;
+  width: 100%;
+  height: 2rem;
+}
+.contacto__main .formulario form textarea {
+  border: none;
+  padding: 1rem;
+  width: 100%;
+}
+.contacto__main .formulario form button {
+  border-radius: 0%;
+}
+.contacto__main .formulario form button:hover {
+  background-color: #333;
+  color: #f8f9fa;
+}
+
+.gallery-bg h1, .gallery-bg h2, .gallery-bg h3, .gallery-bg p {
+  color: #333;
+}
+.gallery-bg .card {
+  border-radius: 15%;
+  border-color: transparent;
+}
+.gallery-bg .card img {
+  border-radius: 15%;
+}
+
+@media (min-width: 833px) {
+  .gallery-bg .card img:hover {
     transform: scale(1.1);
     transition: 0.5s;
   }
@@ -346,6 +285,4 @@ textarea {
     bottom: 0;
     width: 100%;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
