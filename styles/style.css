@@ -469,7 +469,7 @@ main .content5 {
     width: 100%;
   }
 }
-#cover-index {
+main .cover-index {
   position: relative;
   max-height: 60vh;
   display: flex;
@@ -481,7 +481,7 @@ main .content5 {
   height: 60vh;
   background-image: url(../media/index/hero1.jpg);
 }
-#cover-index::before {
+main .cover-index::before {
   content: "";
   position: absolute;
   top: 0;
@@ -491,36 +491,34 @@ main .content5 {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
-#cover-index h2 {
+main .cover-index h2 {
   z-index: 3;
   color: #fff;
 }
-
-#content-index {
+main #content-index {
   background-color: #333;
 }
-#content-index .description {
+main #content-index .description {
   justify-content: center;
-  align-items: center;
+  lign-items: center;
 }
-
-.container-menu {
+main .container-menu {
   background-color: #2f4655;
 }
-.container-menu .centered {
+main .container-menu .centered {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 20px;
 }
-.container-menu .centered h2 {
+main .container-menu .centered h2 {
   color: #fff;
 }
-.container-menu .centered .container-fluid {
+main .container-menu .centered .container-fluid {
   background-color: #f8f9fa;
 }
-.container-menu .centered .card::hover {
+main .container-menu .centered .card::hover {
   transform: scale(1.1);
   transition: 0.5s;
 }

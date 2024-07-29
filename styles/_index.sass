@@ -2,49 +2,50 @@
 @import '_main'
 @import '_mqueries'
 
-#cover-index
-    position: relative
-    max-height: 60vh
-    display: flex
-    justify-content: center
-    align-items: center
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: center
-    height: 60vh
-    background-image: url(../media/index/hero1.jpg)
-    &::before
-        content: ''
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        background-color: rgba(0, 0, 0, 0.5)
-        z-index: 2
-    h2
-        z-index: 3
-        color: $bgg0
-#content-index
-    background-color: $bgg1
-    .description
-        justify-content: center
-        align-items: center
-.container-menu
-    background-color: $bg22
-    .centered
+main
+    .cover-index
+        position: relative
+        max-height: 60vh
         display: flex
         justify-content: center
         align-items: center
-        flex-direction: column
-        padding: 20px
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        height: 60vh
+        background-image: url(../media/index/hero1.jpg)
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(0, 0, 0, 0.5)
+            z-index: 2
         h2
+            z-index: 3
             color: $bgg0
-        .container-fluid
-            background-color: $bgg2
-        .card::hover
-            transform: scale(1.1)
-            transition: 0.5s
+    #content-index
+        background-color: $bgg1
+        .description
+            justify-content: center
+            lign-items: center
+    .container-menu
+        background-color: $bg22
+        .centered
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            padding: 20px
+            h2
+                color: $bgg0
+            .container-fluid
+                background-color: $bgg2
+            .card::hover
+                transform: scale(1.1)
+                transition: 0.5s
 
 
 
