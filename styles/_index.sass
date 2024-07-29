@@ -1,1 +1,70 @@
 @import '_variables'
+@import '_main'
+@import '_mqueries'
+
+
+#cover-index
+    position: relative
+    max-height: 60vh
+    display: flex
+    justify-content: center
+    align-items: center
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    height: 60vh
+    background-image: url(../media/index/hero1.jpg)
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.5)
+        z-index: 2
+    h2
+        z-index: 3
+        color: $bgg0 !important
+
+#content-index
+    background-color: $bgg1
+        .description
+            justify-content: center
+            align-items: center
+            .img1
+                width: 90%
+                height: auto 
+                overflow: hidden
+                display: flex
+                justify-content: center
+                align-items: center
+                img
+                    max-width: 100%
+                    max-height: 100%
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    position: absolute
+                    top: 0
+                    left: 0
+.container-menu
+    background-color: $bg1
+    .centered
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        padding: 20px
+        h2
+            color: $bgg1
+        .container-fluid
+            background-color: $bgg2
+        .card::hover
+            transform: scale(1.1)
+            transition: 0.5s
+
+
+
+
+
