@@ -132,8 +132,9 @@ main .content5 {
 
 .contacto__main {
   background-color: #333 !important;
-  height: 80vh !important;
+  height: 90vh !important;
   overflow: scroll;
+  padding-bottom: 20vh;
 }
 .contacto__main h1, .contacto__main p, .contacto__main label {
   color: #f8f9fa;
@@ -192,6 +193,8 @@ main .content5 {
     transition: 0.5s;
   }
   .contacto__footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
   }
 }
