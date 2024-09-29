@@ -173,20 +173,13 @@ main .content5 {
 }
 .gallery-bg .card {
   border-radius: 0px;
+  border: none;
 }
 .gallery-bg .card .btn {
   border-radius: 0px;
 }
 
 @media (min-width: 833px) {
-  .centered .card img:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
-  }
-  .gallery-bg .card img:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-  }
   .contacto__footer {
     position: absolute;
     bottom: 0;
