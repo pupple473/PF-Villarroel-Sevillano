@@ -3,21 +3,21 @@ const products = [{
     name: 'Vinilo Artaud',
     price: 79.90,
     tipe: 'discos',
-    imagen: '../../media/meta/picture-icon-260nw-323592404.webp'
+    image: '../../media/pescado/artaud-cover.webp'
 },
 {
     id: 102,
     name: 'Vinilo Spinettalandia y sus amigos',
     price: 38.80,
     tipe: 'discos',
-    image: '../../media/meta/picture-icon-260nw-323592404.webp'
+    image: '../../media/spinettalandia/spinettalandia8.webp'
 },
 {
     id: 103,
     name: 'Vinilo Almendra',
     price: 45.49,
     tipe: 'discos',
-    image: '../../media/meta/picture-icon-260nw-323592404.webp'
+    image: '../../media/meta/almendraI.webp'
 },
 {
     id: 204,
