@@ -35,20 +35,7 @@ function crearCards(products) {
 // Crear las cards inicialmente
 crearCards(products);
 
-// Función para añadir al carrito y guardar en localStorage
-function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingProduct = cart.find(item => item.name === product.name);
 
-    if (existingProduct) {
-        existingProduct.quantity += 1; // Incrementar la cantidad si el producto ya existe
-    } else {
-        cart.push({ ...product, quantity: 1 }); // Agregar producto al carrito
-    }
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartMenu();
-}
 
 // Actualizar el menú flotante con los productos del carrito
 function updateCartMenu() {
@@ -75,7 +62,20 @@ function updateCartMenu() {
     totalLi.textContent = `Total: $${total.toFixed(2)}`; // Mostrar el total
     cartItems.appendChild(totalLi);
 }
+// Función para añadir al carrito y guardar en localStorage
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProduct = cart.find(item => item.name === product.name);
 
+    if (existingProduct) {
+        existingProduct.quantity += 1; // Incrementar la cantidad si el producto ya existe
+    } else {
+        cart.push({ ...product, quantity: 1 }); // Agregar producto al carrito
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartMenu();
+}
 // Función para buscar productos
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase(); // Convertir el término a minúsculas
@@ -96,3 +96,15 @@ document.getElementById('clear-cart').addEventListener('click', () => {
 
 // Actualizar el carrito cuando se carga la página
 updateCartMenu();
+
+//Mostrar carrito
+document.getElementById('toggle-cart').addEventListener('click', () => {
+    const cartContent = document.getElementById('cart-content');
+    // Alternar la visibilidad del contenido del carrito
+    if (cartContent.style.display === 'none') {
+        cartContent.style.display = 'block';
+        updateCartMenu(); // Actualiza el contenido del carrito al mostrarlo
+    } else {
+        cartContent.style.display = 'none';
+    }
+});
