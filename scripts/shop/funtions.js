@@ -62,17 +62,47 @@ function updateCartMenu() {
     totalLi.textContent = `Total: $${total.toFixed(2)}`; // Mostrar el total
     cartItems.appendChild(totalLi);
 }
+function updateCartMenu() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.forEach((product) => {
+        const li = document.createElement('li');
+        li.textContent = `${product.name} - $${product.price}`;
+
+        // Crear botón de eliminar
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Eliminar';
+        removeButton.classList.add('btn', 'btn-danger', 'remove-button');   
+
+        removeButton.dataset.productName = product.name; // Almacenar el nombre del producto en el dataset
+
+        // Agregar el botón al elemento de la lista
+        li.appendChild(removeButton);
+
+        // Agregar el elemento de la lista al contenedor
+        cartItems.appendChild(li);
+
+        // Agregar event listener al botón de eliminar
+        removeButton.addEventListener('click', removeProductFromList);
+    });
+}
+
+function removeProductFromList(event) {
+    const productName = event.target.dataset.productName;
+    removeFromCart(productName);
+}
 // Función para añadir al carrito y guardar en localStorage
 function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingProduct = cart.find(item => item.name === product.name);
-
+    Swal.fire("Se ha añadido "+product.name+" al carrito.");
     if (existingProduct) {
         existingProduct.quantity += 1; // Incrementar la cantidad si el producto ya existe
     } else {
         cart.push({ ...product, quantity: 1 }); // Agregar producto al carrito
     }
-    
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartMenu();
 }
@@ -91,6 +121,7 @@ searchInput.addEventListener('input', () => {
 // Limpiar el carrito
 document.getElementById('clear-cart').addEventListener('click', () => {
     localStorage.removeItem('cart');
+    Swal.fire("Se ha vaciado el carrito!");
     updateCartMenu();
 });
 
