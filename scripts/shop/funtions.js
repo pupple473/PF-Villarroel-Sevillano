@@ -35,7 +35,10 @@ function crearCards(products) {
 // Crear las cards inicialmente
 crearCards(products);
 
-
+function removeProductFromList(event) {
+    const productName = event.target.dataset.productName;
+    removeFromCart(productName);
+}
 
 // Actualizar el menú flotante con los productos del carrito
 function updateCartMenu() {
@@ -89,10 +92,7 @@ function updateCartMenu() {
     });
 }
 
-function removeProductFromList(event) {
-    const productName = event.target.dataset.productName;
-    removeFromCart(productName);
-}
+
 // Función para añadir al carrito y guardar en localStorage
 function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
