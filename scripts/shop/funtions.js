@@ -6,98 +6,95 @@ const productosContainer = document.getElementById('container-shop');
 const searchInput = document.getElementById('search-input');
 
 // Función para crear las cards y agregarlas al DOM
-function crearCards(products) {
+const crearCards = (products) => {
     productosContainer.innerHTML = ''; // Limpiar el contenedor antes de crear nuevas cards
-    products.forEach(product => {
+    products.forEach(({ image, name, price }) => {
         const card = document.createElement('div');
         card.classList.add('col'); // Para usar el sistema de grid de Bootstrap
 
         card.innerHTML = `
             <div class="card card-small">
-                <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                <img src="${image}" class="card-img-top" alt="${name}">
                 <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text">Precio: $${product.price}</p>
+                    <h5 class="card-title">${name}</h5>
+                    <p class="card-text">Precio: $${price}</p>
                     <button class="btn btn-primary add-to-cart">Añadir al carrito</button>
                 </div>
             </div>
         `;
 
         // Evento para añadir al carrito
-        card.querySelector('.add-to-cart').addEventListener('click', () => {
-            addToCart(product);
-        });
+        card.querySelector('.add-to-cart').addEventListener('click', () => addToCart({ name, price, image }));
 
         productosContainer.appendChild(card);
     });
-}
+};
 
 // Crear las cards inicialmente
 crearCards(products);
 
-
-
 // Actualizar el menú flotante con los productos del carrito
-function updateCartMenu() {
+const updateCartMenu = () => {
     const cartItems = document.getElementById('cart-items');
     cartItems.innerHTML = ''; // Limpiar el menú antes de actualizar
 
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let total = 0; // Inicializar el total
 
-    cart.forEach((product) => {
+    cart.forEach(({ name, price, quantity }) => {
         const li = document.createElement('li');
         li.style.color = '#fff';
 
         // Mostrar la cantidad si es más de 1
-        const quantityText = product.quantity > 1 ? ` x${product.quantity}` : '';
-        li.textContent = `${product.name} - $${product.price}${quantityText}`;
+        const quantityText = quantity > 1 ? ` x${quantity}` : '';
+        li.textContent = `${name} - $${price}${quantityText}`;
         cartItems.appendChild(li);
 
-        total += product.price * product.quantity; // Calcular el total
+        total += price * quantity; // Calcular el total
     });
 
     const totalLi = document.createElement('li');
     totalLi.style.color = '#fff';
     totalLi.textContent = `Total: $${total.toFixed(2)}`; // Mostrar el total
     cartItems.appendChild(totalLi);
-}
-function updateCartMenu() {
+};
+
+// Actualizar el menú del carrito
+const updateCartItems = () => {
     const cartItems = document.getElementById('cart-items');
     cartItems.innerHTML = '';
 
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.forEach((product) => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.forEach(({ name, price }) => {
         const li = document.createElement('li');
-        li.textContent = `${product.name} - $${product.price}`;
+        li.textContent = `${name} - $${price}`;
 
         // Crear botón de eliminar
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Eliminar';
-        removeButton.classList.add('btn', 'btn-danger', 'remove-button');   
+        removeButton.classList.add('btn', 'btn-danger', 'remove-button');
 
-        removeButton.dataset.productName = product.name; // Almacenar el nombre del producto en el dataset
+        removeButton.dataset.productName = name; // Almacenar el nombre del producto en el dataset
 
         // Agregar el botón al elemento de la lista
         li.appendChild(removeButton);
-
-        // Agregar el elemento de la lista al contenedor
         cartItems.appendChild(li);
 
         // Agregar event listener al botón de eliminar
         removeButton.addEventListener('click', removeProductFromList);
     });
-}
+};
 
-function removeProductFromList(event) {
+const removeProductFromList = (event) => {
     const productName = event.target.dataset.productName;
     removeFromCart(productName);
-}
+};
+
 // Función para añadir al carrito y guardar en localStorage
-function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+const addToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingProduct = cart.find(item => item.name === product.name);
-    Swal.fire("Se ha añadido "+product.name+" al carrito.");
+    Swal.fire(`Se ha añadido ${product.name} al carrito.`);
     if (existingProduct) {
         existingProduct.quantity += 1; // Incrementar la cantidad si el producto ya existe
     } else {
@@ -105,37 +102,9 @@ function addToCart(product) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartMenu();
-}
+};
+
 // Función para buscar productos
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase(); // Convertir el término a minúsculas
-    const allProducts = products; // Almacenar la lista completa de productos
-
-    const filteredProducts = allProducts.filter(product => 
-        product.name.toLowerCase().includes(searchTerm) // Filtrar productos según el término
-    );
-
-    crearCards(filteredProducts); // Crear las cards filtradas
-});
-
-// Limpiar el carrito
-document.getElementById('clear-cart').addEventListener('click', () => {
-    localStorage.removeItem('cart');
-    Swal.fire("Se ha vaciado el carrito!");
-    updateCartMenu();
-});
-
-// Actualizar el carrito cuando se carga la página
-updateCartMenu();
-
-//Mostrar carrito
-document.getElementById('toggle-cart').addEventListener('click', () => {
-    const cartContent = document.getElementById('cart-content');
-    // Alternar la visibilidad del contenido del carrito
-    if (cartContent.style.display === 'none') {
-        cartContent.style.display = 'block';
-        updateCartMenu(); // Actualiza el contenido del carrito al mostrarlo
-    } else {
-        cartContent.style.display = 'none';
-    }
-});
+    const filteredProducts = products.filter(({ name }) => name.toLowerCase().includes
