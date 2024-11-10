@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="../media/meta/almendra.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/style.css"> 
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Contacto</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active headder__white" aria-current="page" href="../index.html">Inicio</a>
-                        </li>                    
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link headder__white" aria-current="page" href="./almendra.html">Almendra</a>
                         </li>
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </nav>
-            
+
     </Header>
     <main class="bg-main">
         <div class="container-fluid  py-5">
@@ -64,18 +64,22 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 formulario py-5">
-                        <form action="mailto:sietes_memoria_0y@icloud.com" method="post" enctype="text/plain">
+                        <form action="enviar.php" method="post">
                             <div class="form-group py-1">
                                 <label class="p-1" for="nombre">Nombre:</label><br>
-                                <input type="text" id="nombre" name="nombre"><br>
+                                <input type="text" id="nombre" name="nombre" required><br>
                             </div>
                             <div class="form-group py-1">
                                 <label class="p-1" for="email">Correo electrónico:</label><br>
-                                <input type="email" id="email" name="email"><br>
+                                <input type="email" id="email" name="email" required><br>
+                            </div>
+                            <div class="form-group py-1">
+                                <label class="p-1" for="asunto">Asunto:</label><br>
+                                <input type="text" id="asunto" name="asunto" required><br>
                             </div>
                             <div class="form-group p-1">
                                 <label class="p-1" for="mensaje">Mensaje:</label><br>
-                                <textarea id="mensaje" name="mensaje"></textarea><br>
+                                <textarea id="mensaje" name="mensaje" required></textarea><br>
                             </div>
                             <div class="pt-4 p__justify">
                                 <button class="btn" type="submit">Enviar</button>  
